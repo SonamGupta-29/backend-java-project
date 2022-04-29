@@ -6,7 +6,6 @@ import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
-
 @Getter
 @Setter
 @ToString
@@ -27,4 +26,6 @@ public class Login {
 
     @Column(name = "password")
     private String password;
+
+
 }

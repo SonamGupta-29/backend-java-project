@@ -1,6 +1,7 @@
 package com.dlithe.bankingapp.controller;
 
 import com.dlithe.bankingapp.DTO.CustomerDetailRequest;
+import com.dlithe.bankingapp.DTO.UserDetails;
 import com.dlithe.bankingapp.service.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -24,6 +25,13 @@ public class TestController {
         return testService.registerCustomer(customerDetailRequest);
     }
 
+
+    @GetMapping("get-user-details/{userId}")
+    public UserDetails fetchUserDetails(@PathVariable int userId){
+        return testService.getUserDetails(userId);
+    }
 }
+
+
 
 

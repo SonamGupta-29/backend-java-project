@@ -1,20 +1,22 @@
 package com.dlithe.bankingapp.DTO;
 
-
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.util.List;
+
+@ToString
 @Getter
 @Setter
 @EqualsAndHashCode
-@ToString
-public class CustomerDetailRequest {
 
-    private int id;
+public class UserDetails {
+
     private String name;
     private String email;
     private String password;
 
 }
+
