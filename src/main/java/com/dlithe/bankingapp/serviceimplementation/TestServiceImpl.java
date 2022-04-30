@@ -94,6 +94,20 @@ public class TestServiceImpl<CustomerDetails> implements TestService {
         return userDetailsResponse;
     }
 
+    @Override
+    public UserDetails fetchUserByUserName(String userName, int userId) {
+
+        UserDetails userdetails = new UserDetails();
+
+        Login login = loginDAO.findByName(userName, userId);
+
+        userdetails.setId(login.getId());
+        userdetails.setName(login.getName());
+        userdetails.setEmail(login.getEmail());
+        userdetails.setPassword(login.getPassword());
+
+        return userdetails;
+    }
 
 }
 

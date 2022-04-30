@@ -11,4 +11,6 @@ public interface TestService {
     String registerCustomer(CustomerDetailRequest customerDetailRequest);
 
     UserDetails getUserDetails(int userId);
+
+    UserDetails fetchUserByUserName(String userName, int userId);
 }
