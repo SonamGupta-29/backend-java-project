@@ -2,19 +2,20 @@ package com.dlithe.bankingapp.serviceimplementation;
 
 
 import com.dlithe.bankingapp.DTO.CustomerDetailRequest;
+import com.dlithe.bankingapp.DTO.ReviewResponse;
 import com.dlithe.bankingapp.DTO.UserDetails;
 import com.dlithe.bankingapp.entity.Login;
 import com.dlithe.bankingapp.repository.LoginDAO;
 import com.dlithe.bankingapp.service.TestService;
-import com.sun.deploy.cache.BaseLocalApplicationProperties;
-import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Service
-public class TestServiceImpl implements TestService {
+public class TestServiceImpl<CustomerDetails> implements TestService {
 
 
     @Autowired
@@ -54,16 +55,48 @@ public class TestServiceImpl implements TestService {
         return "User Saved Successfully";
     }
 
-
     @Override
     public UserDetails getUserDetails(int userId) {
-        Optional<Login> logins = loginDAO.findById(userId);
-        Login login = logins.get();
-        UserDetails userDetails = new UserDetails();
-        userDetails.setName(login.getName());
-        userDetails.setEmail(login.getEmail());
-        userDetails.setPassword(login.getPassword());
-        return userDetails;
 
+        List<ReviewResponse> userReview = new ArrayList<>();  //List
+
+        Optional<Login> logins = loginDAO.findById(userId);  //DB Call
+
+        Login login = logins.get();     //fetch the detail of optional object
+
+        UserDetails userDetailsResponse = new UserDetails();
+        userDetailsResponse.setName(login.getName());
+        userDetailsResponse.setEmail(login.getEmail());
+        userDetailsResponse.setPassword(login.getPassword());
+
+        ReviewResponse reviewResponse = new ReviewResponse();
+        reviewResponse.setReviewName("Sonam");
+        reviewResponse.setComment("Nice");
+        reviewResponse.setRating("4.5");
+
+        ReviewResponse reviewResponse1 = new ReviewResponse();
+        reviewResponse1.setReviewName("Shivani");
+        reviewResponse1.setComment("good");
+        reviewResponse1.setRating("3.3");
+
+        ReviewResponse reviewResponse2 = new ReviewResponse();
+        reviewResponse2.setReviewName("Shiv");
+        reviewResponse2.setComment("worst");
+        reviewResponse2.setRating("1");
+
+        userReview.add(reviewResponse);
+        userReview.add(reviewResponse1);
+        userReview.add(reviewResponse2);
+
+        userDetailsResponse.setReview(userReview);
+
+
+        return userDetailsResponse;
     }
+
+
 }
+
+
+
+
