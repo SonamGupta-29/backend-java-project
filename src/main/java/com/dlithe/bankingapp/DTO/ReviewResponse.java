@@ -1,6 +1,5 @@
 package com.dlithe.bankingapp.DTO;
 
-
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -8,14 +7,13 @@ import lombok.ToString;
 
 @Getter
 @Setter
-@EqualsAndHashCode
 @ToString
-public class CustomerDetailRequest {
+@EqualsAndHashCode
 
-    private int id;
-    private String name;
-    private String email;
-    private String password;
+public class ReviewResponse {
 
+    private String reviewName;
+    private String comment;
+    private String rating;
 
 }

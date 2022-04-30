@@ -18,5 +18,7 @@ public class UserDetails {
     private String email;
     private String password;
 
+    private List<ReviewResponse> review;
+
 }
 
