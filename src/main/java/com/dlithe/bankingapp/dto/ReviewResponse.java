@@ -1,4 +1,4 @@
-package com.dlithe.bankingapp.DTO;
+package com.dlithe.bankingapp.dto;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
