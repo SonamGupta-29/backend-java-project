@@ -1,7 +1,7 @@
 package com.dlithe.bankingapp.controller;
 
-import com.dlithe.bankingapp.DTO.CustomerDetailRequest;
-import com.dlithe.bankingapp.DTO.UserDetails;
+import com.dlithe.bankingapp.dto.CustomerDetailRequest;
+import com.dlithe.bankingapp.dto.UserDetails;
 import com.dlithe.bankingapp.service.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

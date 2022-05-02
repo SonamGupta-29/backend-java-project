@@ -1,9 +1,9 @@
 package com.dlithe.bankingapp.serviceimplementation;
 
 
-import com.dlithe.bankingapp.DTO.CustomerDetailRequest;
-import com.dlithe.bankingapp.DTO.ReviewResponse;
-import com.dlithe.bankingapp.DTO.UserDetails;
+import com.dlithe.bankingapp.dto.CustomerDetailRequest;
+import com.dlithe.bankingapp.dto.ReviewResponse;
+import com.dlithe.bankingapp.dto.UserDetails;
 import com.dlithe.bankingapp.entity.Login;
 import com.dlithe.bankingapp.repository.LoginDAO;
 import com.dlithe.bankingapp.service.TestService;
@@ -38,7 +38,6 @@ public class TestServiceImpl<CustomerDetails> implements TestService {
 
         } else {
             return "product name cannot find";
-
         }
     }
 
